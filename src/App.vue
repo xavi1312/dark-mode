@@ -1,28 +1,70 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="app" :class="isDarkMode">
+    <header class="header">
+      <div class="wraper">
+        <div class="header-grid">
+          <div>
+            <h1>Social Media Dashboard</h1>
+            <p class="total-followers">
+              Total Followers:
+              <span>followers</span>
+            </p>
+          </div>
+          <div class="dark-mode">
+            Dark Mode
+            <darkModeSwitch />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section></section>
+    <section></section>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import darkModeSwitch from "./components/dark-mode-switch";
 export default {
   name: "App",
-  components: {
-    HelloWorld
+  components: { darkModeSwitch },
+  computed: {
+    isDarkMode() {
+      return this.$store.state.isDarkMode ? "dark-theme" : "light-theme";
+    }
   }
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "@/globas.scss";
+
+.header {
+  padding-top: 2em;
+  padding-bottom: 100px;
+
+  background-color: var(--lightGray);
+  border-radius: 0 0 20px 20px;
+}
+.header-grid {
+  h1 {
+    margin: 0;
+    font-size: 1.7em;
+  }
+}
+.total-followers {
+  margin: 0.5em 0;
+  padding-bottom: 1.5em;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--gray);
+  border-bottom: 1px solid var(--gray);
+}
+.dark-mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1em;
 }
 </style>

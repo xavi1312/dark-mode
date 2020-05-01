@@ -14,9 +14,7 @@
         src="../assets/icon-up.svg"
       />
       <img v-else src="../assets/icon-down.svg" />
-      {{
-        this.socialMedia.followersToday | removeMinusSymbol | abbreviation
-      }}
+      {{ this.socialMedia.followersToday | removeMinusSymbol | abbreviation }}
       Today
     </p>
   </article>

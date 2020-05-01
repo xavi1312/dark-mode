@@ -7,7 +7,9 @@
             <h1>Social Media Dashboard</h1>
             <p class="total-followers">
               Total Followers:
-              <span>followers</span>
+              <span>{{
+                this.$store.getters.totalFollowers | separationBythousands
+              }}</span>
             </p>
           </div>
           <div class="dark-mode">
@@ -17,21 +19,24 @@
         </div>
       </div>
     </header>
-    <section></section>
+    <section class="social-media-followers">
+      <cardsFollowers />
+    </section>
     <section></section>
   </div>
 </template>
 
 <script>
 import darkModeSwitch from "./components/dark-mode-switch";
+import cardsFollowers from "./components/cards-followers";
 export default {
   name: "App",
-  components: { darkModeSwitch },
+  components: { darkModeSwitch, cardsFollowers },
   computed: {
     isDarkMode() {
       return this.$store.state.isDarkMode ? "dark-theme" : "light-theme";
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -40,7 +45,7 @@ export default {
 
 .header {
   padding-top: 2em;
-  padding-bottom: 100px;
+  padding-bottom: 110px;
 
   background-color: var(--lightGray);
   border-radius: 0 0 20px 20px;
@@ -66,5 +71,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding-top: 1em;
+}
+
+.social-media-followers {
+  margin-top: -40px;
 }
 </style>

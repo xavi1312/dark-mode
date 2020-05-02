@@ -34,13 +34,8 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-$socialMediaColors: (
-  facebook: hsl(203, 89%, 53%),
-  twitter: hsl(195, 100%, 50%),
-  instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)),
-  youtube: hsl(348, 97%, 39%),
-);
+<style lang="scss" scoped>
+@import "@/scss/variables.scss";
 .card {
   padding: 1.7em 0;
 

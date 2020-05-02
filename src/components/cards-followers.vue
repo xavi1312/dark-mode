@@ -14,22 +14,23 @@
 import cardFollowers from "./card-followers";
 export default {
   name: "cardsFollowers",
-  components: { cardFollowers }
+  components: { cardFollowers },
 };
-</script>  
+</script>
 <style lang="scss">
+@import "@/scss/variables";
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5em;
 
-  @media screen and (min-width: 540px) and (max-width: 767px) {
+  @media screen and (min-width: $sm) and (max-width: $md) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media screen and (min-width: 768px) and (max-width: 991px) {
+  @media screen and (min-width: $md) and (max-width: $lg) {
     grid-template-columns: repeat(3, 1fr);
   }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: $lg) {
     grid-template-columns: repeat(4, 1fr);
   }
 }

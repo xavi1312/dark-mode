@@ -23,19 +23,20 @@
 export default {
   name: "cardFollowers",
   props: {
-    socialMedia: Object,
+    socialMedia: Object
   },
   computed: {
     isPositive() {
       return this.socialMedia.followersToday >= 0
         ? "hsl(163, 72%, 41%)"
         : "hsl(356, 69%, 56%)";
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
-@import "@/scss/variables.scss";
+@import "@/scss/variables";
+@import "@/scss/parent";
 .card {
   padding: 1.7em 0;
 
@@ -45,7 +46,7 @@ export default {
   text-align: center;
 
   background-color: var(--bgCard);
-  border-radius: 8px;
+  border-radius: $br;
   &::before {
     content: "";
 
@@ -71,10 +72,7 @@ export default {
   align-items: center;
 }
 .card-nick-name {
-  font-size: 0.9em;
-  font-weight: 700;
-
-  color: var(--cardTitle);
+  @extend %title;
   img {
     margin-right: 7px;
   }
@@ -94,10 +92,8 @@ export default {
   }
 }
 .card-new-followers-today {
+  @extend %improvement;
   margin-top: 20px;
-
-  font-size: 0.7em;
-  font-weight: 700;
 
   img {
     margin-right: 7px;

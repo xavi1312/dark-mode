@@ -2,7 +2,7 @@
   <div class="wraper">
     <div class="grid">
       <cardFollowers
-        v-for="socialMedia in this.$store.getters.cards"
+        v-for="socialMedia in this.$store.getters.socialMediaFollowers"
         :key="socialMedia.id"
         :socialMedia="socialMedia"
       />
@@ -13,11 +13,11 @@
 <script>
 import cardFollowers from "./card-followers";
 export default {
-  name: "cardsFollowers",
+  name: "cardFollowersList",
   components: { cardFollowers },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/scss/variables";
 .grid {
   display: grid;

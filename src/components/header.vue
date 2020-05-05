@@ -26,8 +26,8 @@ import darkModeSwitch from "./dark-mode-switch";
 export default {
   name: "customHeader",
   components: {
-    darkModeSwitch,
-  },
+    darkModeSwitch
+  }
 };
 </script>
 <style lang="scss" scoped>

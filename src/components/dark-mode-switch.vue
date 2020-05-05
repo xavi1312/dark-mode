@@ -8,9 +8,20 @@
 <script>
 export default {
   name: "darkModeSwitch",
+  data() {
+    return {
+      isDarkMode: false,
+    };
+  },
   methods: {
     darkMode() {
-      this.$store.commit("changeDarkModeState");
+      const bodyClassList = document.body.classList;
+      if (this.isDarkMode) {
+        bodyClassList.remove("dark-theme");
+      } else {
+        bodyClassList.add("dark-theme");
+      }
+      this.isDarkMode = !this.isDarkMode;
     },
   },
 };

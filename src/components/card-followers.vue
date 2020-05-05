@@ -23,15 +23,15 @@
 export default {
   name: "cardFollowers",
   props: {
-    socialMedia: Object
+    socialMedia: Object,
   },
   computed: {
     isPositive() {
       return this.socialMedia.followersToday >= 0
         ? "hsl(163, 72%, 41%)"
         : "hsl(356, 69%, 56%)";
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

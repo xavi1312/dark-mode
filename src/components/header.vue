@@ -12,7 +12,6 @@
           </p>
         </div>
         <div class="dark-mode">
-          Dark Mode
           <darkModeSwitch />
         </div>
       </div>
@@ -26,8 +25,8 @@ import darkModeSwitch from "./dark-mode-switch";
 export default {
   name: "customHeader",
   components: {
-    darkModeSwitch
-  }
+    darkModeSwitch,
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -37,6 +36,7 @@ export default {
   padding-bottom: 110px;
 
   background-color: var(--lightGray);
+
   border-radius: 0 0 20px 20px;
 }
 .header-grid {
@@ -57,7 +57,7 @@ export default {
 }
 .dark-mode {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding-top: 1em;
 }

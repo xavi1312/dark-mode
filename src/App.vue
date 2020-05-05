@@ -33,7 +33,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
-  background-color: var(--bg);
 
   #app {
     color: var(--textColor);

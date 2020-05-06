@@ -1,17 +1,17 @@
 <template>
   <header class="header">
     <div class="wraper">
-      <div class="header-grid">
+      <div class="header__grid">
         <div>
           <h1>Social Media Dashboard</h1>
-          <p class="total-followers">
+          <p class="header__total-followers">
             Total Followers:
             <span>{{
               this.$store.getters.totalFollowers | separationBythousands
             }}</span>
           </p>
         </div>
-        <div class="dark-mode">
+        <div class="header__dark-mode">
           <darkModeSwitch />
         </div>
       </div>
@@ -39,13 +39,13 @@ export default {
 
   border-radius: 0 0 20px 20px;
 }
-.header-grid {
+.header__grid {
   h1 {
     margin: 0;
     font-size: 1.7em;
   }
 }
-.total-followers {
+.header__total-followers {
   margin: 0.5em 0;
   padding-bottom: 1.5em;
 
@@ -55,14 +55,10 @@ export default {
   color: var(--gray);
   border-bottom: 1px solid var(--gray);
 }
-.dark-mode {
+.header__dark-mode {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-top: 1em;
-}
-
-.social-media-followers {
-  margin-top: -40px;
 }
 </style>

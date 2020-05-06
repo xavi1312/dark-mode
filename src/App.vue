@@ -70,17 +70,19 @@ select {
 
 // Scroll Bar
 ::-webkit-scrollbar-track {
-  //-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--bgCard);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
+  background-color: var(--bgCard);
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: var(--bgCard);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--gray);
 }
 </style>

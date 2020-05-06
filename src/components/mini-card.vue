@@ -1,11 +1,11 @@
 <template>
   <article class="mini-card">
-    <p class="mini-card-title">{{ this.data.title }}</p>
-    <p class="mini-card-icon-container">
+    <p class="mini-card__title">{{ this.data.title }}</p>
+    <p class="mini-card__icon-container">
       <img :src="require(`@/assets/icon-${this.data.name}.svg`)" />
     </p>
-    <p class="mini-card-total">{{ this.data.total | abbreviation }}</p>
-    <p class="mini-card-number-today" :style="{ color: isPositive }">
+    <p class="mini-card__total">{{ this.data.total | abbreviation }}</p>
+    <p class="mini-card__number-today" :style="{ color: isPositive }">
       <span>
         <img v-if="this.data.improvement >= 0" src="../assets/icon-up.svg" />
         <img v-else src="../assets/icon-down.svg" />
@@ -20,15 +20,15 @@
 export default {
   name: "miniCard",
   props: {
-    data: Object
+    data: Object,
   },
   computed: {
     isPositive() {
       return this.data.improvement >= 0
         ? "hsl(163, 72%, 41%)"
         : "hsl(356, 69%, 56%)";
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -49,15 +49,15 @@ export default {
 p {
   margin: 0;
 }
-.mini-card-title {
+.mini-card__title {
   @extend %title;
 }
-.mini-card-icon-container,
-.mini-card-number-today {
+.mini-card__icon-container,
+.mini-card__number-today {
   text-align: right;
 }
 
-.mini-card-number-today {
+.mini-card__number-today {
   @extend %improvement;
   text-align: right;
   display: flex;
@@ -71,7 +71,7 @@ p {
     margin-right: 7px;
   }
 }
-.mini-card-total {
+.mini-card__total {
   display: block;
 
   font-size: 2.5em;

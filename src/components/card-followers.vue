@@ -1,14 +1,14 @@
 <template>
   <article class="card" :class="'card-' + this.socialMedia.name">
-    <p class="card-nick-name">
+    <p class="card__nick-name">
       <img :src="require(`@/assets/icon-${this.socialMedia.name}.svg`)" />
       {{ "@" + this.socialMedia.nickName }}
     </p>
-    <p class="card-followers">
+    <p class="card__followers">
       <span>{{ this.socialMedia.totalFollowers | abbreviation }}</span>
       <span>followers</span>
     </p>
-    <p class="card-new-followers-today" :style="{ color: isPositive }">
+    <p class="card__new-followers-today" :style="{ color: isPositive }">
       <img
         v-if="this.socialMedia.followersToday >= 0"
         src="../assets/icon-up.svg"
@@ -64,20 +64,20 @@ export default {
     background: $color;
   }
 }
-.card-nick-name,
-.card-new-followers-today,
-.card-followers span {
+.card__nick-name,
+.card__new-followers-today,
+.card__followers span {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.card-nick-name {
+.card__nick-name {
   @extend %title;
   img {
     margin-right: 7px;
   }
 }
-.card-followers {
+.card__followers {
   span:first-child {
     display: block;
 
@@ -91,7 +91,7 @@ export default {
     color: var(--cardTitle);
   }
 }
-.card-new-followers-today {
+.card__new-followers-today {
   @extend %improvement;
   margin-top: 20px;
 

@@ -8,7 +8,7 @@ Este proyecto nace de crear un dark mode switch en un proyecto pequeño pero con
 - [Vue CLI](https://cli.vuejs.org/): Entorno de dessarrollo de la librería [Vue.js](https://vuejs.org/).
 - [Vuex](https://vuex.vuejs.org/guide/): Store de Vue que permite la comunicación entre componentes en Vue.
 
-## Proyecto en vivo
+## Proyecto desplegado
 
 https://xavi1312.github.io/dark-mode/
 
